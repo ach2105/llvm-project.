@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Generate Enum Maps",
+      "type": "shell",
+      "command": "python3 enum_parser.py",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Run C++",
+      "type": "shell",
+      "command": "g++ -std=c++11 main.cpp -o main && ./main",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": "Generate Enum Maps",
+      "problemMatcher": []
+    }
+  ]
+}
